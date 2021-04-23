@@ -1,5 +1,6 @@
 """
 Generate pi to a given number of digits
+TODO: parallelize calculation using multiprocessing module
 
 original code: https://docs.python.org/3/library/decimal.html#recipes
 """
@@ -10,12 +11,16 @@ from sys import argv
 
 
 def adder(x):
-    """ Function to parallelize """
+    """
+    Function to parallelize
+    """
     return (x[0] + x[1], x[0] + x[2])
 
 
 def pi(precision=42):
-    """ Compute Pi to the current precision. """
+    """
+    Compute Pi to the current precision.
+    """
     gc().prec = precision
     gc().prec += 2  # extra digits for intermediate steps
 

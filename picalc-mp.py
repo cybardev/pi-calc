@@ -16,7 +16,9 @@ def adder(*x):
 
 
 def pi(precision=42):
-    """ Compute Pi to the current precision. """
+    """
+    Compute Pi to the current precision.
+    """
     gc().prec = precision
     gc().prec += 2  # extra digits for intermediate steps
 
