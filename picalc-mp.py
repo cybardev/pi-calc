@@ -16,11 +16,8 @@ def adder(*x):
 
 
 def pi(precision=42):
-    """
-    Compute Pi to the current precision.
-    """
-    gc().prec = precision
-    gc().prec += 2  # extra digits for intermediate steps
+    """ Compute Pi to the current precision. """
+    gc().prec = precision + 2  # extra digits for intermediate steps
 
     three = D(3)  # substitute "three=3.0" for regular floats
     ed, t, s, n, na, d, da = 0, three, 3, 1, 0, 0, 24
