@@ -38,4 +38,3 @@ def pi(precision=42):
 
 if __name__ == "__main__":
     print(pi(int(argv[1]) if len(argv) > 1 else 42))
-

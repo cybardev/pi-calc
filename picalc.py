@@ -24,9 +24,8 @@ def pi(precision=42):
 
     # main calculation process
     while s != end:
-        (end, _), (n, na), (d, da) = map(
-            adder, ((0, s, 0), (na, n, 8), (da, d, 32))
-        )
+        (end, _), (n, na), (d, da) = map(adder,
+                                         ((0, s, 0), (na, n, 8), (da, d, 32)))
         t = (t * n) / d
         s += t
 
@@ -36,4 +35,3 @@ def pi(precision=42):
 
 if __name__ == "__main__":
     print(pi(int(argv[1]) if len(argv) > 1 else 42))
-
