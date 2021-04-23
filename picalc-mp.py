@@ -28,9 +28,12 @@ def pi(precision=42):
     # main calculation process
     with mp.Pool(3) as p:
         while s != ed:
-            a, b, c = p.apply_async(adder, (0, s, 0)), p.apply_async(
-                adder, (na, n, 8)), p.apply_async(adder, (da, d, 32))
-            (ed, _), (n, na), (d, da) = a.get(), b.get(), c.get()
+            (ed,
+             _), (n, na), (d,
+                           da) = (r.get()
+                                  for r in (p.apply_async(adder, (0, s, 0)),
+                                            p.apply_async(adder, (na, n, 8)),
+                                            p.apply_async(adder, (da, d, 32))))
             t = (t * n) / d
             s += t
 
