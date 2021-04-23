@@ -1,7 +1,7 @@
 """
 Generate pi to a given number of digits
-TODO: parallelize calculation using multiprocessing module
 
+TODO: parallelize calculation using multiprocessing module
 original code: https://docs.python.org/3/library/decimal.html#recipes
 """
 #!/usr/bin/env python3
