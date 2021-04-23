@@ -24,8 +24,7 @@ def pi(precision=42):
 
     # main calculation process
     while s != ed:
-        (ed, _), (n, na), (d, da) = map(adder,
-                                         ((0, s, 0), (na, n, 8), (da, d, 32)))
+        ed, n, na, d, da = s, n+na, n+8, d+da, d+32
         t = (t * n) / d
         s += t
 
