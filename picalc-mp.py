@@ -10,8 +10,8 @@ import multiprocessing as mp
 from sys import argv
 
 
-# function to parallelize
 def adder(*x):
+    """ Function to parallelize """
     return (x[0] + x[1], x[0] + x[2])
 
 
