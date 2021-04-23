@@ -21,12 +21,12 @@ def pi(precision=42):
     gc().prec += 2  # extra digits for intermediate steps
 
     three = D(3)  # substitute "three=3.0" for regular floats
-    end, t, s, n, na, d, da = 0, three, 3, 1, 0, 0, 24
+    ed, t, s, n, na, d, da = 0, three, 3, 1, 0, 0, 24
 
     # main calculation process
     with mp.Pool(3) as p:
-        while s != end:
-            (end, _) = p.apply_async(adder, (0, s, 0)).get()
+        while s != ed:
+            (ed, _) = p.apply_async(adder, (0, s, 0)).get()
             (n, na) = p.apply_async(adder, (na, n, 8)).get()
             (d, da) = p.apply_async(adder, (da, d, 32)).get()
             t = (t * n) / d

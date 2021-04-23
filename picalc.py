@@ -20,11 +20,11 @@ def pi(precision=42):
     gc().prec += 2  # extra digits for intermediate steps
 
     three = D(3)  # substitute "three=3.0" for regular floats
-    end, t, s, n, na, d, da = 0, three, 3, 1, 0, 0, 24
+    ed, t, s, n, na, d, da = 0, three, 3, 1, 0, 0, 24
 
     # main calculation process
-    while s != end:
-        (end, _), (n, na), (d, da) = map(adder,
+    while s != ed:
+        (ed, _), (n, na), (d, da) = map(adder,
                                          ((0, s, 0), (na, n, 8), (da, d, 32)))
         t = (t * n) / d
         s += t
