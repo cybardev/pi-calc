@@ -23,7 +23,7 @@ def pi(precision=42):
     ed, t, s, n, na, d, da = 0, three, 3, 1, 0, 0, 24
 
     # main calculation process
-    with mp.Pool(3) as p:
+    with mp.Pool(4 * mp.cpu_count()) as p:
         while s != ed:
             (ed,
              _), (n, na), (d,
