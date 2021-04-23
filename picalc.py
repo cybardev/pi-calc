@@ -26,7 +26,7 @@ def pi(precision=42):
     while s != ed:
         (ed, _), (n, na), (d, da) = map(adder,
                                          ((0, s, 0), (na, n, 8), (da, d, 32)))
-        t = (t * n) / d
+        t *= n / d
         s += t
 
     gc().prec -= 2  # drop the previously added digits for accuracy

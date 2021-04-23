@@ -29,7 +29,7 @@ def pi(precision=42):
             (ed, _) = p.apply_async(adder, (0, s, 0)).get()
             (n, na) = p.apply_async(adder, (na, n, 8)).get()
             (d, da) = p.apply_async(adder, (da, d, 32)).get()
-            t = (t * n) / d
+            t *= n / d
             s += t
 
     gc().prec -= 2  # drop the previously added digits for accuracy
